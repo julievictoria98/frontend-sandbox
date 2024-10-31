@@ -1,7 +1,11 @@
+import CookieContent from "@/components/CookieContent";
+import If from "@/components/If";
 
-import Button from "@/components/Button";
 export default function Home() {
+  const CookieIsAccepted = true;
   return (
-      <Button />
+    <If condition={CookieIsAccepted}>
+      <CookieContent />
+    </If>
   );
 }
