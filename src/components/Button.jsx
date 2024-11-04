@@ -4,15 +4,18 @@ import { IoIosClose } from "react-icons/io";
 import { useState } from "react";
 
 const Button = () => {
-  const [isCookieShown, setisCookieShown] = useState(true);
+  const [isCookieAccpedted, setisCookieAccpedted] = useState(false);
+  const [isCookieAccpedtedClosed, setisCookieAccpedtedClosed] = useState(false);
+
   return (
-    isCookieShown && (
+    !isCookieAccpedted &&
+    !isCookieAccpedtedClosed && (
       <div className="max-w-64 flex flex-col items-start gap-8 bg-black rounded-xl p-6">
         <div className="flex justify-between w-full mb-4">
           <FaCookieBite color="white" size={50} />
           <IoIosClose
             onClick={() => {
-              setisCookieShown(!isCookieShown);
+              setisCookieAccpedtedClosed(!isCookieAccpedtedClosed);
             }}
             color="white"
             size={30}
@@ -24,7 +27,7 @@ const Button = () => {
         </p>
         <button
           onClick={() => {
-            setisCookieShown(!isCookieShown);
+            setisCookieAccpedted(!isCookieAccpedted);
           }}
           className=" w-full bg-white text-black p-2  rounded-lg"
         >
